@@ -1,11 +1,10 @@
 
-
-
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:practice_project/home/home_page.dart';
 import 'package:practice_project/home/webview_page.dart';
 import 'package:practice_project/login/login_router.dart';
+import 'package:practice_project/store/store_router.dart';
 
 import '404.dart';
 import 'router_init.dart';
@@ -40,7 +39,7 @@ class Routes {
      _listRouter.add(LoginRouter());
     // _listRouter.add(GoodsRouter());
     // _listRouter.add(OrderRouter());
-    // _listRouter.add(StoreRouter());
+     _listRouter.add(StoreRouter());
     // _listRouter.add(AccountRouter());
     // _listRouter.add(SettingRouter());
     // _listRouter.add(StatisticsRouter());

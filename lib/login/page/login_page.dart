@@ -6,6 +6,7 @@ import 'package:practice_project/common/common.dart';
 import 'package:practice_project/res/gaps.dart';
 import 'package:practice_project/res/styles.dart';
 import 'package:practice_project/routers/fluo_navigator.dart';
+import 'package:practice_project/store/store_router.dart';
 import 'package:practice_project/util/utils.dart';
 import 'package:practice_project/widgets/app_bar.dart';
 import 'package:practice_project/widgets/my_button.dart';
@@ -39,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
     String name = _nameController.text;
     String password = _passwordController.text;
     bool isClick = true;
-    if (name.isEmpty || name.length < 11) {
+    if (name.isEmpty || name.length < 9) {
       isClick = false;
     }
     if (password.isEmpty || password.length < 6) {
@@ -47,7 +48,6 @@ class _LoginPageState extends State<LoginPage> {
     }
     if (isClick != _isClick) {
       setState(() {
-        print('isClick change');
         _isClick = isClick;
       });
     }
@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void _login() {
     FlutterStars.SpUtil.putString(Constant.phone, _nameController.text);
-    // NavigatorUtils.push(context, StoreRouter.auditPage);
+     NavigatorUtils.push(context, StoreRouter.auditPage);
   }
 
   @override
@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: Theme.of(context).textTheme.subtitle,
               ),
               onTap: () {
-                //    NavigatorUtils.push(context, LoginRouter.resetPasswordPage)
+                  NavigatorUtils.push(context, LoginRouter.resetPasswordPage);
               },
             ),
           ),
@@ -138,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(color: Theme.of(context).primaryColor),
                 ),
                 onTap: () {
-                  //NavigatorUtils.push(context, LoginRouter.registerPage)
+                  NavigatorUtils.push(context, LoginRouter.registerPage);
                 },
               )
           )
